@@ -1,9 +1,9 @@
 from flask import Blueprint, Flask, Response, jsonify, request
 
-from .common import Filter
+from .common import Filter, Pagination
 from .data import MockedData
 
-catalogs = Blueprint("catalog_module", __name__, url_prefix="/catalog")
+catalogs = Blueprint("catalog_module", __name__, url_prefix="/api/catalog")
 
 
 @catalogs.get("/<int:catalog_id>/prizes")
@@ -27,6 +27,29 @@ def list_prizes(catalog_id: int):
         return Response(
             status=400,
             response="id must be integer",
+            content_type="text/plain",
+        )
+    except Exception:
+        return Response(status=500, content_type="")
+
+    try:
+        if ("page" in request.args and not "per_page" in request.args) or (
+            not "page" in request.args and "per_page" in request.args
+        ):
+            return Response(
+                status=400,
+                content_type="text/plain",
+                response="page and per_page must be provided toghethere or not provided",
+            )
+        if "page" in request.args and "per_page" in request.args:
+            pagination = Pagination(
+                page=int(request.args["page"]),
+                per_page=int(request.args["per_page"]),
+            )
+    except ValueError:
+        return Response(
+            status=400,
+            response="page and per_page must be integer",
             content_type="text/plain",
         )
     except Exception:
