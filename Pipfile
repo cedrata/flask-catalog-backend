@@ -14,3 +14,7 @@ pytest=">=8.2.2"
 [requires]
 python_version = "3.12"
 python_full_version = "3.12.3"
+
+[scripts]
+tests-execution = "python -m pytest -v"
+tests-list = "python -m pytest --co"
