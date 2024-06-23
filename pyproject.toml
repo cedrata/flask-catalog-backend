@@ -2,6 +2,7 @@
 name = "prizes-flask-api"
 requires-python = ">=3.12"
 dependencies = []
+version = "0.0.1"
 
 [build-system]
 requires = ["setuptools", "setuptools_scm"]

@@ -115,18 +115,24 @@ class MockedData:
         Raises:
             KeyError: if the catalog_id does not exists
         """
-        catalog = self.data[catalog_id]
+        catalog = self.data[catalog_id].copy()
 
         if prize_filter:
             prize_id = prize_filter.get("id")
             prize_description = prize_filter.get("description", "").strip()
 
-            for index, prize in enumerate(catalog):
-                if prize.id != prize_id and (
-                    prize_description != ""
-                    and prize_description in prize.description
-                ):
-                    catalog.pop(index)
+            catalog_filterd = []
+
+            for pr in catalog:
+                print(pr.description)
+                is_in_description = (
+                    False
+                    if prize_description == ""
+                    else prize_description in pr.description
+                )
+                if prize_id == pr.id or is_in_description:
+                    catalog_filterd.append(pr)
+            catalog = catalog_filterd
 
         if pagination:
             start_idx = (pagination["page"] - 1) * pagination["per_page"]
