@@ -35,3 +35,10 @@ or simply list the available python tests
 ```bash
 make list-test
 ```
+
+## Notes
+There are many improvements that can be applied:
+- swagger doc
+- instead of having multiple `try catch` create custom exceptions to handle query parameters validation
+- more in depth tests
+- versioning with a separate file and not hardcoded in pyproject.toml
