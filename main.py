@@ -4,7 +4,7 @@ from os import environ
 from dotenv import load_dotenv
 from flask import Flask, Response
 
-from api import register_routes
+from api.routes import register_routes
 
 load_dotenv()
 
