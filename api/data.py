@@ -99,8 +99,8 @@ class MockedData:
     def get_prizes(
         self,
         catalog_id: int,
-        prize_filter: Optional[Filter],
-        pagination: Optional[Pagination],
+        prize_filter: Optional[Filter] = None,
+        pagination: Optional[Pagination] = None,
     ) -> List[Prize]:
         """Get prizes for this mocked data, filtering and paginating.
 
