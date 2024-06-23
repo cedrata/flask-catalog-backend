@@ -43,3 +43,4 @@ There are many improvements that can be applied:
 - more in depth tests
 - versioning with a separate file and not hardcoded in pyproject.toml
 - add as a function parameter the database instead of hardcode it inside the function
+- add logger
