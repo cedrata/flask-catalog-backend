@@ -1,0 +1,81 @@
+[project]
+name = "prizes-flask-api"
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["setuptools", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+minversion = "8.1"
+testpaths = ["tests"]
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+line-length = 79
+indent-width = 4
+
+target-version = "py310"
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 79
+skip-magic-trailing-comma = true
+
+[tool.ruff.lint]
+select = [
+    # pyflake8-commas
+    "COM",
+    # pycodestyle
+    "D", 
+    # pyflakes
+    "F", 
+    # flake8-logging-format
+    "G",
+    # pyflake8-boolean-trap
+    "FBT",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    # warning
+    "W",
+]
+ignore = ["D100", "D101", "F401", "F841", "COM812"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pyright]
+# any pyright configuration
+# default looks good for now, not adding any rules
