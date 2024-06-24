@@ -14,15 +14,20 @@ Create a new `.env` file, use the `.env.example` to do so
 $ cp .env.example .env
 ```
 
+```bash
+$ pyenv install 3.12
+$ pyenv local 3.12
+```
+
 Install then all the dependencies with using pipenv
 ```bash
-pipenv install --dev
+$ pipenv install --dev
 ```
 
 ## Usage
 Start the local server
 ```bash
-make serve
+$ make serve
 ```
 
 Refer to the [OpenAPI doc](./swagger.yaml), open it with the [Swagger Editor](https://editor.swagger.io)
@@ -30,12 +35,12 @@ Refer to the [OpenAPI doc](./swagger.yaml), open it with the [Swagger Editor](ht
 ## Testing
 Execute the available tests
 ```bash
-make test
+$ make test
 ```
 
 or simply list the available python tests
 ```bash
-make list-test
+$ make list-test
 ```
 
 Testing the endpoint with curl:
