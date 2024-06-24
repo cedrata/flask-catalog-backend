@@ -5,7 +5,7 @@ This is a REST API exercise built with Flask.
 ## Requirements
 Packages:
 - pipenv
-- pyenv (to install the python according version)
+- pyenv (to install the python according version, python 3.12, see [Pipfile](./Pipfile))
 - bash
 
 ## First time
