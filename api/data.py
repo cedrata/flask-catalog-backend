@@ -124,7 +124,6 @@ class MockedData:
             catalog_filterd = []
 
             for pr in catalog:
-                print(pr.description)
                 is_in_description = (
                     False
                     if prize_description == ""
